@@ -1,0 +1,8 @@
+recreated/
+*.zip
+**/node_modules/
+**/dist/
+**/dist-vercel/
+**/.next/
+**/.vinext/
+**/.wrangler/
