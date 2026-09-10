@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "python3 -m http.server 4173",
-    "build": "node scripts/build.mjs",
+    "build": "npm --prefix visibility-engine-assessment run build:vercel",
+    "build:legacy": "node scripts/build.mjs",
     "preview": "python3 -m http.server 4173 --directory dist"
   }
 }
