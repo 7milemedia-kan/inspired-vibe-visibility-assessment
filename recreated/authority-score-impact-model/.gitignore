@@ -1,0 +1,18 @@
+node_modules
+dist
+# The database and its write-ahead sidecars hold submitted contact details.
+# None of it belongs in version control.
+data.db
+data.db-wal
+data.db-shm
+data.db*
+*.sqlite
+*.sqlite3
+*.log
+.env
+.env.*
+!.env.example
+.npm-cache/
+.runtime/
+brand-reference/
+verification/

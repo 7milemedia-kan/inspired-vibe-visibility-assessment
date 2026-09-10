@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Assess the six systems behind your market visibility." />
+    <title>Visibility Engine Assessment | Inspired Vibe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="intro-panel" aria-labelledby="survey-title">
+        <a class="brand" href="https://inspiredvibe.com" aria-label="Inspired Vibe home">
+          <span class="brand-mark">iv</span><span>inspired vibe</span>
+        </a>
+        <div class="intro-copy">
+          <p class="eyebrow">YOUR VISIBILITY ENGINE ASSESSMENT</p>
+          <h1 id="survey-title">Let’s see how much <em>credibility</em> is being built before you enter the room.</h1>
+          <p class="lede">This assessment looks at six parts of the system behind your visibility—not how often you post or how many followers you have.</p>
+          <ul><li>Your overall Visibility Score</li><li>A six-part performance breakdown</li><li>Your strongest area and priority gap</li></ul>
+        </div>
+        <p class="privacy-note">Your answers stay private. No spam—ever.</p>
+        <div class="decor decor-one"></div><div class="decor decor-two"></div>
+      </section>
+
+      <section class="survey-panel" aria-live="polite">
+        <div class="survey-card">
+          <div class="progress-wrap" hidden>
+            <div class="progress-meta"><span id="progress-label">Question 1 of 8</span><span id="progress-percent">13%</span></div>
+            <div class="progress-track"><div id="progress-bar"></div></div>
+          </div>
+
+          <section class="screen welcome active" data-screen="welcome">
+            <div class="mini-mark">✦</div>
+            <p class="kicker">YOUR VISIBILITY ENGINE ASSESSMENT</p>
+            <h2>Let’s see how much credibility is being built before you enter the room.</h2>
+            <p>We’re looking at whether the expertise your buyers trust is actually being positioned, captured, distributed, found, and connected to a meaningful next step.</p>
+            <p>Answer based on what is actually happening today, not what is planned for next quarter.</p>
+            <button class="primary" id="start-button">Start My Assessment <span>→</span></button>
+            <small>About 10 minutes · 24 questions</small>
+          </section>
+
+          <form id="survey-form" novalidate></form>
+
+          <section class="screen results" data-screen="results">
+            <p class="kicker">YOUR VISIBILITY SCORE</p>
+            <div class="score-ring" style="--score:0"><strong id="score-value">0</strong><span>/ 100</span></div>
+            <p class="result-label" id="result-label">Building momentum</p>
+            <h2 id="result-title">You have a strong foundation. Now let’s make it consistent.</h2>
+            <p id="result-copy"></p>
+            <div class="result-grid"><div><span>Strongest area</span><strong id="strong-area">—</strong></div><div><span>Gap to address first</span><strong id="weak-area">—</strong></div></div>
+            <div class="dimension-results" id="dimension-results" aria-label="Score by dimension"></div>
+            <a class="primary link-button" href="mailto:hello@inspiredvibe.com?subject=My%20Visibility%20Engine%20Score">Talk through my results <span>→</span></a>
+            <button class="text-button" id="restart-button">Retake the scorecard</button>
+          </section>
+
+          <div class="survey-actions" hidden><button class="back-button" type="button" id="back-button">← Back</button><span>Press a number key to choose</span></div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

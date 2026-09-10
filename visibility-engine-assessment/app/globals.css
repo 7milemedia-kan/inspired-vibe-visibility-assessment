@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: 'Balboa Light';
+  src: url('/fonts/balboa-light.woff2') format('woff2');
+  font-weight: 200 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Balboa';
+  src: url('/fonts/balboa-condensed.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Balboa Bold';
+  src: url('/fonts/balboa-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-background: var(--background); --color-foreground: var(--foreground);
+  --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card); --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring);
+  --font-sans: var(--font-body); --font-heading: 'Balboa Light';
+  --radius-sm: calc(var(--radius) * .6); --radius-md: calc(var(--radius) * .8);
+  --radius-lg: var(--radius); --radius-xl: calc(var(--radius) * 1.4); --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  --background: #ffffff; --foreground: #333333;
+  --card: #ffffff; --card-foreground: #333333;
+  --primary: #bf2d32; --primary-foreground: #ffffff;
+  --secondary: #1aa6b7; --secondary-foreground: #022d41;
+  --muted: #f4eeed; --muted-foreground: #5e666a;
+  --border: #bfbab5; --input: #bfbab5; --ring: #1aa6b7;
+  --radius: .45rem; --paper: #ffffff; --paper-deep: #f4eeed; --ink: #022d41;
+  --ink-soft: #4b5d65; --signal: #bf2d32; --signal-dark: #9c2227; --teal: #1aa6b7;
+}
+
+.dark {
+  --background: #022d41; --foreground: #ffffff;
+  --card: #003b51; --card-foreground: #ffffff;
+  --primary: #bf2d32; --primary-foreground: #ffffff;
+  --secondary: #1aa6b7; --secondary-foreground: #022d41;
+  --muted: #063f54; --muted-foreground: #d9e7e9;
+  --border: #2b6373; --input: #2b6373; --ring: #1aa6b7;
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { @apply font-sans; }
+  body { @apply bg-background text-foreground; margin: 0; font-weight: 400; }
+  button { cursor: pointer; }
+}
+
+.font-heading { font-family: 'Balboa Light', Impact, sans-serif; text-transform: uppercase; font-weight: 500; }
+.survey-shell { position: relative; background: linear-gradient(112deg, #022d41 0%, #022d41 38%, #064f63 66%, #1aa6b7 145%); color: white; }
+.survey-grid { position: absolute; inset: 0; overflow: hidden; opacity: 1; background: radial-gradient(ellipse 70% 120% at 88% 45%, transparent 0 28%, rgba(26,166,183,.18) 28.3% 38%, transparent 38.3%), radial-gradient(ellipse 66% 112% at 90% 45%, transparent 0 44%, rgba(0,0,0,.22) 44.3% 62%, transparent 62.3%); }
+
+.answer-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.25rem;
+  padding: .8rem 1rem;
+  border: 1px solid rgba(34, 35, 41, .13);
+  border-radius: .45rem;
+  background: rgba(255, 255, 255, .94);
+  color: var(--ink);
+  transition: transform .18s ease, border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
+  cursor: pointer;
+}
+
+.answer-card:hover {
+  transform: translateX(.25rem);
+  border-color: var(--teal);
+  background: #fff;
+}
+
+.answer-card:focus-within {
+  outline: 3px solid rgba(220, 62, 47, .2);
+  outline-offset: 2px;
+}
+
+.answer-card-selected {
+  border-color: var(--signal);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(44, 38, 34, .08);
+}
+
+.answer-letter {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex: none;
+  border: 1px solid rgba(34, 35, 41, .16);
+  border-radius: .25rem;
+  color: var(--ink-soft);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.answer-card-selected .answer-letter { border-color: var(--signal); background: var(--signal); color: white; }
+.answer-check { display: grid; place-items: center; width: 1.8rem; height: 1.8rem; flex: none; border-radius: 999px; background: var(--signal); color: white; opacity: 0; transform: scale(.75); transition: opacity .18s ease, transform .18s ease; }
+.answer-card-selected .answer-check { opacity: 1; transform: scale(1); }
+
+.score-orb {
+  display: flex;
+  min-height: 19rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  background: var(--signal);
+  color: white;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 24px 70px rgba(34,35,41,.2);
+}
+
+.score-orb span:last-child { color: rgba(255,255,255,.72); }
+.result-callout { min-height: 15rem; border: 1px solid rgba(34,35,41,.1); border-radius: .5rem; background: #fff; color: var(--ink); padding: 1.6rem; }
+
+@media (max-width: 640px) {
+  .answer-card { align-items: flex-start; padding: .85rem; }
+  .answer-check { display: none; }
+  .score-orb { min-height: 16rem; border-radius: .5rem; }
+}
