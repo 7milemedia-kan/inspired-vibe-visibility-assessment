@@ -1,4 +1,4 @@
-import { assessmentCopy } from './assessment-copy';
+import { assessmentCopy } from './assessment-copy.js';
 export type Choice = { label: string; text: string; score: number };
 export type Question = { prompt: string; note?: string; choices: Choice[] };
 export type Section = { name: string; lead: string; description: string; cta: string; questions: Question[] };

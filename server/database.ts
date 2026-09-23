@@ -2,7 +2,7 @@ import pg from 'pg';
 import { attachDatabasePool } from '@vercel/functions';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { and, desc, eq, gt, lt, sql } from 'drizzle-orm';
-import { submissions, sessions, rateLimits } from './schema';
+import { submissions, sessions, rateLimits } from './schema.js';
 let cached: ReturnType<typeof drizzle> | undefined;
 export function database() {
   if (!cached) {

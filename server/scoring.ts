@@ -1,4 +1,4 @@
-import { flatQuestions, sections, maturityBand } from '../visibility-engine-assessment/lib/assessment';
+import { flatQuestions, sections, maturityBand } from '../visibility-engine-assessment/lib/assessment.js';
 export function calculateResults(answers: number[]) {
   const score = Math.round(answers.reduce((sum, value) => sum + value, 0) / 96 * 100);
   const dimensions = sections.map((section, index) => ({

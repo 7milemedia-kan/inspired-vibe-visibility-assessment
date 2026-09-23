@@ -2,6 +2,7 @@
   "name": "inspired-vibe",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "node --env-file=.env.local --import tsx scripts/assessment-server.ts",
     "build": "npm --prefix visibility-engine-assessment run build:vercel",

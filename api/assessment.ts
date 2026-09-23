@@ -1,7 +1,7 @@
 import { createHmac } from 'node:crypto';
-import { repository } from '../server/database';
-import { digest, parseSubmission, randomToken, verifyPassword } from '../server/security';
-import { answerSnapshot, calculateResults } from '../server/scoring';
+import { repository } from '../server/database.js';
+import { digest, parseSubmission, randomToken, verifyPassword } from '../server/security.js';
+import { answerSnapshot, calculateResults } from '../server/scoring.js';
 
 export function createHandler(repo = repository) {
   return async function handler(req: any, res: any) {
