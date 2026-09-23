@@ -14,7 +14,7 @@ npm run build
 npm --prefix visibility-engine-assessment run preview:vercel
 ```
 
-The deployment is static: answers and scoring remain in the browser. Balboa fonts are included locally; Montserrat loads from Google Fonts. No server environment variables are required.
+The React frontend is served alongside a Vercel API that saves names, emails, answers, and server-calculated scores to Neon Postgres. The password-protected `/admin` page displays submissions. See [ADMIN-SETUP.md](ADMIN-SETUP.md) for environment variables, database setup, local development, and password management. Balboa fonts are included locally; Montserrat loads from Google Fonts.
 
 The files at the repository root below describe the earlier static survey. Build that earlier version with `npm run build:legacy`.
 
