@@ -1,4 +1,10 @@
 recreated/
+.env*
+.admin-credentials.txt
+assets/
+github-publish/
+sites-visibility-landing/
+tests/
 *.zip
 **/node_modules/
 **/dist/

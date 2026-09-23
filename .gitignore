@@ -2,3 +2,10 @@ dist/
 node_modules/
 .DS_Store
 dist-vercel/
+.vercel/
+.env*
+!.env.example
+.neon
+
+.admin-credentials.txt
+.env.example.local

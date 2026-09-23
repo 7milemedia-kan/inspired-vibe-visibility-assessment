@@ -5,8 +5,8 @@ import './globals.css';
 const body = Montserrat({ variable: '--font-body', subsets: ['latin'], weight: ['400', '500', '600', '700'] });
 
 export const metadata: Metadata = {
-  title: 'Visibility Engine Assessment',
-  description: 'Measure how effectively your expertise is positioned, captured, distributed, found, and converted into opportunity.',
+  title: 'Visibility Assessment | Inspired Vibe',
+  description: 'Discover your Authority Score and how much buyer trust your expertise builds before the sales call.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
