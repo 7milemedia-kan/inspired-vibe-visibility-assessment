@@ -69,6 +69,11 @@
 
 .font-heading { font-family: 'Balboa Light', Impact, sans-serif; text-transform: uppercase; font-weight: 500; }
 .survey-shell { position: relative; background: linear-gradient(112deg, #022d41 0%, #022d41 38%, #064f63 66%, #1aa6b7 145%); color: white; }
+.section-video-background { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.section-video-background video { width: 100%; height: 100%; object-fit: cover; }
+.section-video-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,23,41,.88), rgba(0,23,41,.6)); }
+.section-video-toggle { position: absolute; right: 1.25rem; top: 1rem; z-index: 2; border: 1px solid rgba(255,255,255,.5); border-radius: .375rem; background: rgba(0,23,41,.8); padding: .5rem .75rem; color: white; font-size: .75rem; }
+.section-video-toggle:focus-visible { outline: 2px solid white; outline-offset: 4px; }
 .survey-grid { position: absolute; inset: 0; overflow: hidden; opacity: 1; background: radial-gradient(ellipse 70% 120% at 88% 45%, transparent 0 28%, rgba(26,166,183,.18) 28.3% 38%, transparent 38.3%), radial-gradient(ellipse 66% 112% at 90% 45%, transparent 0 44%, rgba(0,0,0,.22) 44.3% 62%, transparent 62.3%); }
 
 .answer-card {
